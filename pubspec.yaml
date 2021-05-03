@@ -11,8 +11,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.2
+  intl: ^0.16.0
+  shared_preferences:
+  synchronized:
+  flutter_bloc: ^5.0.0
+  rxdart: ^0.23.1
+  fluttertoast: ^6.0.0
+  http: ^0.13.0
+  dio: ^4.0.0
 
 dev_dependencies:
   flutter_test:
@@ -21,3 +28,26 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+  assets:
+    - asset/
+    - asset/font/
+    - asset/image/
+
+  fonts:
+    - family: PopBlack
+      fonts:
+        - asset: asset/font/Poppins-ExtraBold.ttf
+          weight: 900
+        - asset: asset/font/Poppins-Bold.ttf
+          weight: 800
+        - asset: asset/font/Poppins-SemiBold.ttf
+          weight: 700
+        - asset: asset/font/Poppins-Medium.ttf
+          weight: 600
+        - asset: asset/font/Poppins-Regular.ttf
+          weight: 500
+        - asset: asset/font/Poppins-Light.ttf
+          weight: 400
+        - asset: asset/font/Poppins-Thin.ttf
+          weight: 300
