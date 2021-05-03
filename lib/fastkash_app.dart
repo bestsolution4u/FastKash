@@ -49,8 +49,18 @@ class _FastKashAppState extends State<FastKashApp> {
             fontFamily: 'PopBlack',
           ),
           home: BlocBuilder<ApplicationBloc, ApplicationState>(
-            builder: (context, state) {
-              if (state is ApplicationSetupState) return MainScreen();
+            builder: (context, appState) {
+              if (appState is ApplicationSetupState) {
+                return BlocBuilder<AuthenticationBloc, AuthenticationState>(
+                    builder: (context, authState) {
+                      if (authState is AuthenticationInitial) {
+                        return SplashScreen();
+                      } else if (authState is AuthenticationFailure) {
+                        return IntroScreen();
+                      } else return MainScreen();
+                    },
+                );
+              }
               return SplashScreen();
             },
           ),
